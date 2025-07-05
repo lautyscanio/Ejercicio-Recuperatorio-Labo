@@ -48,12 +48,13 @@ public class Empleado extends Persona {
     public void setProductos_emp(ArrayList<Producto> productos_emp) {
         this.productos_emp = productos_emp;
     }
+
+    //Ejercicio 8
     public Long anios_en_la_empresa(){
+
         return ChronoUnit.YEARS.between(f_ingreso,LocalDate.now());
     }
 
     public static void main(String[] args) {
-        Empleado e1=new Empleado();
-        System.out.println("el empleado esta hace "+ e1.anios_en_la_empresa()+" años en la empresa");
-    }
+     }
 }

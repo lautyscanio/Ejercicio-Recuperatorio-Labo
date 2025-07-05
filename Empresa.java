@@ -57,6 +57,7 @@ public class Empresa {
         this.empleados = empleados;
     }
 
+    //Ejercicio 5
     public int sueldos_a_pagar(){
         int total=0;
 
@@ -66,6 +67,7 @@ public class Empresa {
         return total;
     }
 
+    //Ejercicio 10
     public void empleados_mayores_60 (){
         ArrayList<Empleado> empleados_60=new ArrayList<>();
         for (Empleado e: empleados){
@@ -73,28 +75,11 @@ public class Empresa {
                 empleados_60.add(e);
             }
         }
-        System.out.println("Se tendran que contratar "+empleados_60.size()+" empleados");
+        System.out.println("Se tendran que contratar "+empleados_60.size()+" empleado/s");
     }
 
 
     public static void main(String[] args) {
-    Empresa e=new Empresa();
-    Empleado emp1=new Empleado();
-    Empleado emp2=new Empleado("luca","seijas", LocalDate.of(1965,4,2),LocalDate.of(2025,4,2),600000,new ArrayList<>());
-    Producto p1=new Perecedero();
-    Producto p2=new No_perecedero();
-    emp1.getProductos_emp().add(p1);
-    emp2.getProductos_emp().add(p1);
-    emp2.getProductos_emp().add(p2);
-
-    e.empleados.add(emp1);
-    e.empleados.add(emp2);
-
-    System.out.println("La empresa tiene que pagar: $" + e.sueldos_a_pagar());
-
-    e.empleados_mayores_60();
-
-
 
     }
 }

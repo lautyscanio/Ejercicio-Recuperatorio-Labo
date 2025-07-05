@@ -31,6 +31,7 @@ public class Tienda {
         this.proveedores = proveedores;
     }
 
+    //Ejercicio 2
     public void mostrar_vencidos(){
         for(Producto p:productos_tienda){
             if(p.vencido()){
@@ -41,7 +42,7 @@ public class Tienda {
 
 
 
-
+    //Ejercicio 3
     public void regalos(Empresa empresa){
         ArrayList<Producto>productos_a_entregar=new ArrayList<>();
         for(Empleado e: empresa.getEmpleados()){
@@ -74,7 +75,7 @@ public class Tienda {
         }
     }
 
-
+    //Ejercicio 4
     public Empresa proveedor_con_mas_variedad(){
         int cant_prods_max=0;
         Empresa empresa_aux=proveedores.getFirst();
@@ -88,6 +89,7 @@ public class Tienda {
           return empresa_aux;
     }
 
+    //Ejercicio 6
     public void dias_para_vencer(Producto producto){
 
             if(producto instanceof Perecedero) {
@@ -99,6 +101,7 @@ public class Tienda {
             }
     }
 
+    //Ejercicio 7
     public String aplica_impuestos(){
         double suma=0;
         double porcentaje=productos_tienda.size()*0.45;
@@ -123,20 +126,5 @@ public class Tienda {
     }
 
     public static void main(String[] args) {
-        Tienda t=new Tienda();
-        Empresa e=new Empresa();
-        Empleado emp1=new Empleado();
-        Empleado emp2=new Empleado("luca","seijas", LocalDate.of(2007,4,2),LocalDate.of(2025,4,2),600000,new ArrayList<>());
-        Producto p1=new Perecedero();
-        Producto p2=new No_perecedero();
-        emp1.getProductos_emp().add(p1);
-        emp2.getProductos_emp().add(p1);
-        emp2.getProductos_emp().add(p2);
-        Perecedero p4=new Perecedero(1,"galletitas","chips",e,LocalDate.of(2025,4,2),1000,LocalDate.of(2026,6,3),7);
-        t.productos_tienda.add(p4);
-        t.productos_tienda.add(p2);
-        t.dias_para_vencer(p4);
-
-        System.out.println(t.aplica_impuestos());
     }
 }

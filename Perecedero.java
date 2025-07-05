@@ -36,6 +36,7 @@ public class Perecedero extends Producto {
         this.dias_para_consumir_luego_de_vencimiento = dias_para_consumir_luego_de_vencimiento;
     }
 
+    //Ejercicio 2
     @Override
     public boolean vencido() {
         if (LocalDate.now().isAfter(vencimiento)) {
@@ -46,6 +47,8 @@ public class Perecedero extends Producto {
         }
     }
 
+
+    //Ejercicio 6
     public Long cuanto_falta_para_vencer(){
         if(vencido()){
             return (long) -1;
@@ -55,6 +58,7 @@ public class Perecedero extends Producto {
 
     }
 
+    //Ejercicio 9
     public void seguir_consumiendo(){
         if (!vencido()){
             System.out.println("el producto no vencio");
@@ -71,9 +75,5 @@ public class Perecedero extends Producto {
     }
 
     public static void main(String[] args) {
-        Perecedero p1=new Perecedero();
-        p1.vencido();
-        System.out.println(p1.cuanto_falta_para_vencer());
-        p1.seguir_consumiendo();
     }
 }
